@@ -54,14 +54,46 @@
 		F29C873829B46D5700A77A4C /* osrs-checker-app */ = {
 			isa = PBXGroup;
 			children = (
-				F29C873929B46D5700A77A4C /* AppDelegate.swift */,
-				F29C873B29B46D5700A77A4C /* SceneDelegate.swift */,
-				F29C873D29B46D5700A77A4C /* ViewController.swift */,
-				F29C874229B46D5900A77A4C /* Assets.xcassets */,
+				F2EE964229B4717200369529 /* Application */,
+				F2EE963F29B4713C00369529 /* Model */,
+				F2EE964129B4714900369529 /* Service */,
+				F2EE964029B4714300369529 /* Controller */,
 				F29C874429B46D5900A77A4C /* LaunchScreen.storyboard */,
 				F29C874729B46D5900A77A4C /* Info.plist */,
 			);
 			path = "osrs-checker-app";
+			sourceTree = "<group>";
+		};
+		F2EE963F29B4713C00369529 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2EE964029B4714300369529 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F29C873D29B46D5700A77A4C /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F2EE964129B4714900369529 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		F2EE964229B4717200369529 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F29C874229B46D5900A77A4C /* Assets.xcassets */,
+				F29C873929B46D5700A77A4C /* AppDelegate.swift */,
+				F29C873B29B46D5700A77A4C /* SceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
