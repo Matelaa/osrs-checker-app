@@ -12,6 +12,9 @@
 		F29C873E29B46D5700A77A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C873D29B46D5700A77A4C /* ViewController.swift */; };
 		F29C874329B46D5900A77A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29C874229B46D5900A77A4C /* Assets.xcassets */; };
 		F29C874629B46D5900A77A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29C874429B46D5900A77A4C /* LaunchScreen.storyboard */; };
+		F2EE964429B4729400369529 /* Hiscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE964329B4729400369529 /* Hiscore.swift */; };
+		F2EE964729B4732E00369529 /* HiscoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE964629B4732E00369529 /* HiscoreService.swift */; };
+		F2EE964B29B475B400369529 /* HiscoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE964A29B475B400369529 /* HiscoreViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		F29C874229B46D5900A77A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F29C874529B46D5900A77A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F29C874729B46D5900A77A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2EE964329B4729400369529 /* Hiscore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hiscore.swift; sourceTree = "<group>"; };
+		F2EE964629B4732E00369529 /* HiscoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiscoreService.swift; sourceTree = "<group>"; };
+		F2EE964A29B475B400369529 /* HiscoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiscoreViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +63,7 @@
 				F2EE964229B4717200369529 /* Application */,
 				F2EE963F29B4713C00369529 /* Model */,
 				F2EE964129B4714900369529 /* Service */,
+				F2EE964829B4758A00369529 /* ViewModel */,
 				F2EE964029B4714300369529 /* Controller */,
 				F29C874429B46D5900A77A4C /* LaunchScreen.storyboard */,
 				F29C874729B46D5900A77A4C /* Info.plist */,
@@ -67,6 +74,7 @@
 		F2EE963F29B4713C00369529 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F2EE964329B4729400369529 /* Hiscore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,6 +90,7 @@
 		F2EE964129B4714900369529 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				F2EE964529B4731E00369529 /* Hiscore */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -94,6 +103,30 @@
 				F29C873B29B46D5700A77A4C /* SceneDelegate.swift */,
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		F2EE964529B4731E00369529 /* Hiscore */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE964629B4732E00369529 /* HiscoreService.swift */,
+			);
+			path = Hiscore;
+			sourceTree = "<group>";
+		};
+		F2EE964829B4758A00369529 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE964929B475A700369529 /* Hiscore */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F2EE964929B475A700369529 /* Hiscore */ = {
+			isa = PBXGroup;
+			children = (
+				F2EE964A29B475B400369529 /* HiscoreViewModel.swift */,
+			);
+			path = Hiscore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +199,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2EE964429B4729400369529 /* Hiscore.swift in Sources */,
+				F2EE964729B4732E00369529 /* HiscoreService.swift in Sources */,
 				F29C873E29B46D5700A77A4C /* ViewController.swift in Sources */,
 				F29C873A29B46D5700A77A4C /* AppDelegate.swift in Sources */,
+				F2EE964B29B475B400369529 /* HiscoreViewModel.swift in Sources */,
 				F29C873C29B46D5700A77A4C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
