@@ -10,13 +10,12 @@ import Foundation
 class HiscoreViewModel {
     
     let hiscoreService = HiscoreService()
+    var hiscore: [Hiscore] = []
     
     func getHiscorePlayer(name: String?) {
         if let name = name {
             self.hiscoreService.fetchHiscorePlayer(name: name) { hiscore in
-                for info in hiscore {
-                    print(info)
-                }
+                self.hiscore = hiscore
             }
         }
     }

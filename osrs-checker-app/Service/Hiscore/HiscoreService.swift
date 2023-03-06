@@ -23,25 +23,52 @@ class HiscoreService {
             
             if let responseString = String(data: responseData, encoding: .utf8) {
                 
-                var hiscoreDictionary = [[String: Any]]()
+                var hiscores = [Hiscore]()
                 
+                let skillTypes: [SkillType] = [.overall,
+                                               .attack,
+                                               .defence,
+                                               .strength,
+                                               .hitpoints,
+                                               .ranged,
+                                               .prayer,
+                                               .magic,
+                                               .cooking,
+                                               .woodcutting,
+                                               .fletching,
+                                               .fishing,
+                                               .firemaking,
+                                               .crafting,
+                                               .smithing,
+                                               .mining,
+                                               .herblore,
+                                               .agility,
+                                               .thieving,
+                                               .slayer,
+                                               .farming,
+                                               .runecrafting,
+                                               .hunter,
+                                               .construction]
+                                
                 let lines = responseString.split(separator: "\n")
                 
                 for line in lines {
                     if self.count <= 23 {
                         let values = line.split(separator: ",")
-                        let object = ["rank" : values[0],
-                                      "level": values[1],
-                                      "xp"   : values[2]]
                         
-                        hiscoreDictionary.append(object)
+                        let skillType = skillTypes[self.count]
+                        let rank = values[0]
+                        let level = values[1]
+                        let xp = values[2]
+                        
+                        let hiscore = Hiscore(skill: skillType, rank: String(rank), level: String(level), xp: String(xp))
+                        
+                        hiscores.append(hiscore)
                     }
                     self.count += 1
                 }
                 
-                let jsonData = try! JSONSerialization.data(withJSONObject: hiscoreDictionary)
-                let hiscorePlayer = try! JSONDecoder().decode([Hiscore].self, from: jsonData)
-                completion(hiscorePlayer)
+                completion(hiscores)
             }
         }
         
