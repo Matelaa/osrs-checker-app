@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     lazy var tableView: UITableView = {
         var tableView = UITableView(frame: .zero, style: .grouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -24,13 +24,9 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = .green
         
-        self.hiscoreViewModel.getHiscorePlayer(name: self.playerName)
-        
+        self.hiscoreViewModel.delegate = self
+        self.hiscoreViewModel.getHiscore(name: self.playerName)
         self.setupUI()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.tableView.reloadData()
     }
     
     private func setupUI() {
@@ -62,6 +58,14 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: HiscoreViewModelDelegate {
+    func getHiscorePlayer() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
+
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.hiscoreViewModel.hiscore.count
@@ -75,4 +79,3 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
 }
-

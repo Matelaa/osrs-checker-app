@@ -19,8 +19,6 @@ class ViewControllerTableViewCell: UITableViewCell {
         return label
     }()
     
-    var hiscore: Hiscore!
-    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
@@ -34,9 +32,7 @@ class ViewControllerTableViewCell: UITableViewCell {
     }
     
     func bind(hiscore: Hiscore) {
-        self.hiscore = hiscore
-        
-        self.nameSkillLabel.text = self.hiscore.skill.rawValue
+        self.nameSkillLabel.text = hiscore.skill.rawValue.capitalized
     }
     
     private func setupUI() {

@@ -7,16 +7,21 @@
 
 import Foundation
 
+protocol HiscoreViewModelDelegate {
+    func getHiscorePlayer()
+}
+
 class HiscoreViewModel {
     
-    let hiscoreService = HiscoreService()
+    var delegate: HiscoreViewModelDelegate!
+    private let hiscoreService = HiscoreService()
+    
     var hiscore: [Hiscore] = []
     
-    func getHiscorePlayer(name: String?) {
-        if let name = name {
-            self.hiscoreService.fetchHiscorePlayer(name: name) { hiscore in
-                self.hiscore = hiscore
-            }
+    func getHiscore(name: String) {
+        self.hiscoreService.fetchHiscorePlayer(name: name) { hiscore in
+            self.hiscore = hiscore
+            self.delegate.getHiscorePlayer()
         }
     }
 }
