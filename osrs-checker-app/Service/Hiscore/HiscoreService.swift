@@ -14,12 +14,17 @@ class HiscoreService {
     func fetchHiscorePlayer(name: String, completion: @escaping ([Hiscore]) -> ()) {
         
         let requestURL = self.hiscoreURL + name
+        let finalURL = requestURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        let url = URL(string: finalURL)!
         
-        let url = URL(string: requestURL)!
+        print("URL \(url)")
         
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
             guard let responseData = data else {return}
+            
+            //MARK: TODO - NO STATUS CODE, SE EXISTIR 200, SE NAO, 404, TRATAR OS ERROS
+            print("RESPONSE \(String(describing: response))")
             
             if let responseString = String(data: responseData, encoding: .utf8) {
                 
@@ -67,7 +72,7 @@ class HiscoreService {
                     }
                     self.count += 1
                 }
-                
+                self.count = 0
                 completion(hiscores)
             }
         }

@@ -16,16 +16,12 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    let hiscoreViewModel = HiscoreViewModel()
-    var playerName: String = "matelaaaaaa"
+    var viewModel: HiscoreViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .green
-        
-        self.hiscoreViewModel.delegate = self
-        self.hiscoreViewModel.getHiscore(name: self.playerName)
         self.setupUI()
     }
     
@@ -58,23 +54,15 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: HiscoreViewModelDelegate {
-    func getHiscorePlayer() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
-    }
-}
-
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.hiscoreViewModel.hiscore.count
+        return self.viewModel.hiscore.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ViewControllerTableViewCell
         
-        cell.bind(hiscore: self.hiscoreViewModel.hiscore[indexPath.item])
+        cell.bind(hiscore: self.viewModel.hiscore[indexPath.item])
         
         return cell
     }

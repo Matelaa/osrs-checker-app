@@ -8,7 +8,7 @@
 import Foundation
 
 protocol HiscoreViewModelDelegate {
-    func getHiscorePlayer()
+    func getHiscorePlayer(hasItem: Bool)
 }
 
 class HiscoreViewModel {
@@ -21,7 +21,7 @@ class HiscoreViewModel {
     func getHiscore(name: String) {
         self.hiscoreService.fetchHiscorePlayer(name: name) { hiscore in
             self.hiscore = hiscore
-            self.delegate.getHiscorePlayer()
+            self.delegate.getHiscorePlayer(hasItem: !self.hiscore.isEmpty)
         }
     }
 }

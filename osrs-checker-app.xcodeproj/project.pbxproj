@@ -16,6 +16,7 @@
 		F2EE964429B4729400369529 /* Hiscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE964329B4729400369529 /* Hiscore.swift */; };
 		F2EE964729B4732E00369529 /* HiscoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE964629B4732E00369529 /* HiscoreService.swift */; };
 		F2EE964B29B475B400369529 /* HiscoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE964A29B475B400369529 /* HiscoreViewModel.swift */; };
+		F2FCEF0A29B9AC15007D59F0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2FCEF0929B9AC15007D59F0 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		F2EE964329B4729400369529 /* Hiscore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hiscore.swift; sourceTree = "<group>"; };
 		F2EE964629B4732E00369529 /* HiscoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiscoreService.swift; sourceTree = "<group>"; };
 		F2EE964A29B475B400369529 /* HiscoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiscoreViewModel.swift; sourceTree = "<group>"; };
+		F2FCEF0929B9AC15007D59F0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +102,8 @@
 		F2EE964029B4714300369529 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F204377029B5D7AF00AC2710 /* View */,
-				F29C873D29B46D5700A77A4C /* ViewController.swift */,
+				F2FCEF0B29B9ACA1007D59F0 /* Hiscore */,
+				F2FCEF0829B9ABFA007D59F0 /* Home */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -144,6 +146,23 @@
 			isa = PBXGroup;
 			children = (
 				F2EE964A29B475B400369529 /* HiscoreViewModel.swift */,
+			);
+			path = Hiscore;
+			sourceTree = "<group>";
+		};
+		F2FCEF0829B9ABFA007D59F0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F2FCEF0929B9AC15007D59F0 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F2FCEF0B29B9ACA1007D59F0 /* Hiscore */ = {
+			isa = PBXGroup;
+			children = (
+				F29C873D29B46D5700A77A4C /* ViewController.swift */,
+				F204377029B5D7AF00AC2710 /* View */,
 			);
 			path = Hiscore;
 			sourceTree = "<group>";
@@ -221,6 +240,7 @@
 				F2EE964429B4729400369529 /* Hiscore.swift in Sources */,
 				F2EE964729B4732E00369529 /* HiscoreService.swift in Sources */,
 				F29C873E29B46D5700A77A4C /* ViewController.swift in Sources */,
+				F2FCEF0A29B9AC15007D59F0 /* HomeViewController.swift in Sources */,
 				F29C873A29B46D5700A77A4C /* AppDelegate.swift in Sources */,
 				F2EE964B29B475B400369529 /* HiscoreViewModel.swift in Sources */,
 				F29C873C29B46D5700A77A4C /* SceneDelegate.swift in Sources */,

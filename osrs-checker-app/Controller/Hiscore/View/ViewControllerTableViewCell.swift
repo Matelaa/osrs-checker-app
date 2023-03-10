@@ -32,7 +32,7 @@ class ViewControllerTableViewCell: UITableViewCell {
     }
     
     func bind(hiscore: Hiscore) {
-        self.nameSkillLabel.text = hiscore.skill.rawValue.capitalized
+        self.nameSkillLabel.text = hiscore.level
     }
     
     private func setupUI() {
