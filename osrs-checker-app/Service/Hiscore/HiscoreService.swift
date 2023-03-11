@@ -11,20 +11,26 @@ class HiscoreService {
     var count: Int = 0
     let hiscoreURL: String = "https://secure.runescape.com/m=hiscore_oldschool/index_lite.ws?player="
     
-    func fetchHiscorePlayer(name: String, completion: @escaping ([Hiscore]) -> ()) {
+    func fetchHiscorePlayer(name: String, completion: @escaping (Int, [Hiscore]) -> ()) {
         
         let requestURL = self.hiscoreURL + name
         let finalURL = requestURL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let url = URL(string: finalURL)!
         
-        print("URL \(url)")
-        
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             
-            guard let responseData = data else {return}
+            if let error = error {
+                print("ERROR: \(error.localizedDescription)")
+            }
             
-            //MARK: TODO - NO STATUS CODE, SE EXISTIR 200, SE NAO, 404, TRATAR OS ERROS
-            print("RESPONSE \(String(describing: response))")
+            let httpResponse = response as! HTTPURLResponse
+            
+            if httpResponse.statusCode == 404 {
+                completion(httpResponse.statusCode, [])
+                return
+            }
+            
+            guard let responseData = data else {return}
             
             if let responseString = String(data: responseData, encoding: .utf8) {
                 
@@ -54,7 +60,7 @@ class HiscoreService {
                                                .runecrafting,
                                                .hunter,
                                                .construction]
-                                
+                
                 let lines = responseString.split(separator: "\n")
                 
                 for line in lines {
@@ -73,7 +79,7 @@ class HiscoreService {
                     self.count += 1
                 }
                 self.count = 0
-                completion(hiscores)
+                completion(httpResponse.statusCode, hiscores)
             }
         }
         

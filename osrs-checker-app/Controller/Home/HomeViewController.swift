@@ -10,7 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
     
     
-    //TODO: create a UIImage to display OSRS logo
+    //MARK: - TODO - create a UIImage to display OSRS logo
     
     lazy var nameTextField: UITextField = {
         var textField = UITextField()
@@ -72,8 +72,7 @@ class HomeViewController: UIViewController {
     
     @objc func searchPlayerHiscore() {
         guard let name = self.nameTextField.text, !name.isEmpty else {
-            //MARK: TODO - create one alert to shows the error
-            print("ta errado")
+            self.createAlert(title: "Error", message: "You cannot leave this field blank")
             return
         }
         self.setupActivityIndicator()
@@ -103,6 +102,14 @@ class HomeViewController: UIViewController {
         
         self.searchButton.isEnabled = true
         self.nameTextField.isUserInteractionEnabled = true
+        
+        self.nameTextField.text = ""
+    }
+    
+    private func createAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
+        self.present(alert, animated: true)
     }
     
     private func setupActivityIndicatorConstraints() {
@@ -140,8 +147,10 @@ extension HomeViewController: HiscoreViewModelDelegate {
                 self.navigationController?.pushViewController(controller, animated: true)
             }
         } else {
-            //MARK: TODO - create a alert to show why is not possible to show the hiscore screen
-            print("passa n senhor")
+            DispatchQueue.main.async {
+                self.createAlert(title: "Error", message: "There is no player with this name")
+                self.restoreUI()
+            }
         }
     }
 }

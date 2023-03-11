@@ -19,8 +19,13 @@ class HiscoreViewModel {
     var hiscore: [Hiscore] = []
     
     func getHiscore(name: String) {
-        self.hiscoreService.fetchHiscorePlayer(name: name) { hiscore in
-            self.hiscore = hiscore
+        self.hiscoreService.fetchHiscorePlayer(name: name) { statusCode, hiscore  in
+            switch statusCode {
+            case 200:
+                self.hiscore = hiscore
+            default:
+                self.hiscore = []
+            }
             self.delegate.getHiscorePlayer(hasItem: !self.hiscore.isEmpty)
         }
     }
