@@ -11,9 +11,15 @@ class HomeViewController: UIViewController {
     
     
     //MARK: - TODO - create a UIImage to display OSRS logo
+    lazy var logoImage: UIImageView = {
+        let imageView = UIImageView(image: UIImage(named: "logo_image"))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
+        return imageView
+    }()
     
     lazy var nameTextField: UITextField = {
-        var textField = UITextField()
+        let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         
         textField.backgroundColor = .white
@@ -42,7 +48,7 @@ class HomeViewController: UIViewController {
     }()
     
     lazy var searchButton: UIButton = {
-        var button = UIButton()
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         
         button.setTitle("Search hiscore", for: .normal)
@@ -82,6 +88,7 @@ class HomeViewController: UIViewController {
     private func setupUI() {
         self.view.backgroundColor = .gray
         
+        self.view.addSubview(self.logoImage)
         self.view.addSubview(self.nameTextField)
         self.view.addSubview(self.searchButton)
         
@@ -123,16 +130,21 @@ class HomeViewController: UIViewController {
     
     private func setupConstraints() {
         NSLayoutConstraint.activate([
+            self.logoImage.heightAnchor.constraint(equalToConstant: 200),
+            self.logoImage.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -150),
+            self.logoImage.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 36),
+            self.logoImage.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -36),
+            
             self.nameTextField.heightAnchor.constraint(equalToConstant: 40),
+            self.nameTextField.topAnchor.constraint(equalTo: self.logoImage.bottomAnchor, constant: 72),
             self.nameTextField.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 36),
             self.nameTextField.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -36),
-            self.nameTextField.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.nameTextField.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            
             
             self.searchButton.heightAnchor.constraint(equalToConstant: 60),
-            self.searchButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 60),
-            self.searchButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -60),
             self.searchButton.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 24),
+            self.searchButton.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 60),
+            self.searchButton.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -60)
             
         ])
     }
