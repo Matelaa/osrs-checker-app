@@ -9,8 +9,6 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    
-    //MARK: - TODO - create a UIImage to display OSRS logo
     lazy var logoImage: UIImageView = {
         let imageView = UIImageView(image: UIImage(named: "logo_image"))
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -154,7 +152,7 @@ extension HomeViewController: HiscoreViewModelDelegate {
     func getHiscorePlayer(hasItem: Bool) {
         if hasItem {
             DispatchQueue.main.async {
-                let controller = ViewController()
+                let controller = HiscoreSkillsViewController()
                 controller.viewModel = self.viewModel
                 self.navigationController?.pushViewController(controller, animated: true)
             }

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F204377229B5D7C000AC2710 /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F204377129B5D7C000AC2710 /* ViewControllerTableViewCell.swift */; };
+		F21199CC29C2CAE800ADE3B2 /* HiscoreSkillsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21199CB29C2CAE700ADE3B2 /* HiscoreSkillsCollectionViewCell.swift */; };
+		F252C91C29C187B8006F51F6 /* HiscoreSkillsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F252C91B29C187B8006F51F6 /* HiscoreSkillsViewController.swift */; };
 		F29C873A29B46D5700A77A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C873929B46D5700A77A4C /* AppDelegate.swift */; };
 		F29C873C29B46D5700A77A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C873B29B46D5700A77A4C /* SceneDelegate.swift */; };
-		F29C873E29B46D5700A77A4C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29C873D29B46D5700A77A4C /* ViewController.swift */; };
 		F29C874329B46D5900A77A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F29C874229B46D5900A77A4C /* Assets.xcassets */; };
 		F29C874629B46D5900A77A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F29C874429B46D5900A77A4C /* LaunchScreen.storyboard */; };
 		F2EE964429B4729400369529 /* Hiscore.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2EE964329B4729400369529 /* Hiscore.swift */; };
@@ -20,11 +20,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F204377129B5D7C000AC2710 /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		F21199CB29C2CAE700ADE3B2 /* HiscoreSkillsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiscoreSkillsCollectionViewCell.swift; sourceTree = "<group>"; };
+		F252C91B29C187B8006F51F6 /* HiscoreSkillsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiscoreSkillsViewController.swift; sourceTree = "<group>"; };
 		F29C873629B46D5700A77A4C /* osrs-checker-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "osrs-checker-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29C873929B46D5700A77A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29C873B29B46D5700A77A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F29C873D29B46D5700A77A4C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F29C874229B46D5900A77A4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F29C874529B46D5900A77A4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F29C874729B46D5900A77A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,7 +56,7 @@
 		F204377029B5D7AF00AC2710 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F204377129B5D7C000AC2710 /* ViewControllerTableViewCell.swift */,
+				F21199CB29C2CAE700ADE3B2 /* HiscoreSkillsCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,8 +161,8 @@
 		F2FCEF0B29B9ACA1007D59F0 /* Hiscore */ = {
 			isa = PBXGroup;
 			children = (
-				F29C873D29B46D5700A77A4C /* ViewController.swift */,
 				F204377029B5D7AF00AC2710 /* View */,
+				F252C91B29C187B8006F51F6 /* HiscoreSkillsViewController.swift */,
 			);
 			path = Hiscore;
 			sourceTree = "<group>";
@@ -239,12 +239,12 @@
 			files = (
 				F2EE964429B4729400369529 /* Hiscore.swift in Sources */,
 				F2EE964729B4732E00369529 /* HiscoreService.swift in Sources */,
-				F29C873E29B46D5700A77A4C /* ViewController.swift in Sources */,
 				F2FCEF0A29B9AC15007D59F0 /* HomeViewController.swift in Sources */,
 				F29C873A29B46D5700A77A4C /* AppDelegate.swift in Sources */,
 				F2EE964B29B475B400369529 /* HiscoreViewModel.swift in Sources */,
+				F252C91C29C187B8006F51F6 /* HiscoreSkillsViewController.swift in Sources */,
+				F21199CC29C2CAE800ADE3B2 /* HiscoreSkillsCollectionViewCell.swift in Sources */,
 				F29C873C29B46D5700A77A4C /* SceneDelegate.swift in Sources */,
-				F204377229B5D7C000AC2710 /* ViewControllerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
