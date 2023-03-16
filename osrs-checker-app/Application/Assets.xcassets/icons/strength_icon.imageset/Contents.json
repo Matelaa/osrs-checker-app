@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "strength.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
